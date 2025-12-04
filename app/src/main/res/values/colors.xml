@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material Design Base Colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Pokémon Brand Colors -->
+    <color name="pokemon_red">#DC0A2D</color>
+    <color name="pokemon_red_dark">#A4040A</color>
+    <color name="pokemon_red_light">#FF1744</color>
+    <color name="pokemon_blue">#3B4CCA</color>
+    <color name="pokemon_blue_dark">#2C3A9F</color>
+    <color name="pokemon_yellow">#FFCB05</color>
+    <color name="pokemon_yellow_dark">#FFAA00</color>
+    
+    <!-- Background Colors -->
+    <color name="background_primary">#F5F5F5</color>
+    <color name="background_secondary">#FFFFFF</color>
+    <color name="background_card">#FFFFFF</color>
+    <color name="background_light">#FAFAFA</color>
+    <color name="background_dark">#121212</color>
+    
+    <!-- Button Colors -->
+    <color name="button_primary">#DC0A2D</color>
+    <color name="button_primary_pressed">#A4040A</color>
+    <color name="button_secondary">#3B4CCA</color>
+    <color name="button_secondary_pressed">#2C3A9F</color>
+    <color name="button_shiny">#FFD700</color>
+    <color name="button_shiny_pressed">#FFAA00</color>
+    <color name="button_success">#4CAF50</color>
+    <color name="button_danger">#F44336</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#1D1D1D</color>
+    <color name="text_secondary">#6B6B6B</color>
+    <color name="text_tertiary">#9E9E9E</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_hint">#BDBDBD</color>
+    
+    <!-- Pokémon Type Colors -->
+    <color name="type_normal">#A8A878</color>
+    <color name="type_fire">#F08030</color>
+    <color name="type_water">#6890F0</color>
+    <color name="type_grass">#78C850</color>
+    <color name="type_electric">#F8D030</color>
+    <color name="type_ice">#98D8D8</color>
+    <color name="type_fighting">#C03028</color>
+    <color name="type_poison">#A040A0</color>
+    <color name="type_ground">#E0C068</color>
+    <color name="type_flying">#A890F0</color>
+    <color name="type_psychic">#F85888</color>
+    <color name="type_bug">#A8B820</color>
+    <color name="type_rock">#B8A038</color>
+    <color name="type_ghost">#705898</color>
+    <color name="type_dragon">#7038F8</color>
+    <color name="type_dark">#705848</color>
+    <color name="type_steel">#B8B8D0</color>
+    <color name="type_fairy">#EE99AC</color>
+    
+    <!-- UI Element Colors -->
+    <color name="divider">#E0E0E0</color>
+    <color name="shadow">#40000000</color>
+    <color name="overlay">#80000000</color>
+    <color name="shiny_gold">#FFD700</color>
+    <color name="favorite_red">#EE1515</color>
+    <color name="favorite_empty">#CCCCCC</color>
+    <color name="chip_background">#E8F5E9</color>
+    <color name="danger">#DC3545</color>
+    
+    <!-- Status Colors -->
+    <color name="status_success">#4CAF50</color>
+    <color name="status_error">#F44336</color>
+    <color name="status_warning">#FF9800</color>
+    <color name="status_info">#2196F3</color>
+    
+    <!-- Deprecated (mantidas para compatibilidade) -->
+    <color name="red">#BD0820</color>
+    <color name="gold">#FFD700</color>
+    <color name="blue">#1E90FF</color>
+    <color name="light_red">#FF6347</color>
+    <color name="card_background">#FFFFFF</color>
+</resources>

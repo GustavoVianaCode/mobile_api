@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_pokedex">
+
+    <fragment
+        android:id="@+id/navigation_pokedex"
+        android:name="com.devmasterteam.mybooks.ui.PokemonListFragment"
+        android:label="@string/title_pokedex"
+        tools:layout="@layout/fragment_pokemon_list">
+        <action
+            android:id="@+id/action_pokemonListFragment_to_pokemonDetailsFragment"
+            app:destination="@id/pokemonDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_team"
+        android:name="com.devmasterteam.mybooks.ui.TeamFragment"
+        android:label="@string/title_team"
+        tools:layout="@layout/fragment_team">
+        <action
+            android:id="@+id/action_teamFragment_to_pokemonDetailsFragment"
+            app:destination="@id/pokemonDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pokemonDetailsFragment"
+        android:name="com.devmasterteam.mybooks.ui.PokemonDetailsFragment"
+        android:label="@string/title_pokemon_details"
+        tools:layout="@layout/fragment_pokemon_details" />
+
+    <!-- Fragments antigos mantidos para compatibilidade -->
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.devmasterteam.mybooks.ui.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.devmasterteam.mybooks.ui.FavoriteFragment"
+        android:label="@string/title_favorites"
+        tools:layout="@layout/fragment_favorite" />
+
+    <fragment
+        android:id="@+id/navigation_book_details"
+        android:name="com.devmasterteam.mybooks.ui.DetailsFragment"
+        android:label="@string/title_book_details"
+        tools:layout="@layout/fragment_details" />
+
+</navigation>

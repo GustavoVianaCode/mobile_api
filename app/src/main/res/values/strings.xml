@@ -1,0 +1,44 @@
+<resources>
+
+    <!-- Nome do aplicativo -->
+    <string name="app_name">PokéDex</string>
+
+    <!-- Títulos das telas -->
+    <string name="title_home">Home</string>
+    <string name="title_favorites">Favoritos</string>
+    <string name="title_book_details">Detalhes</string>
+    <string name="title_pokedex">PokéDex</string>
+    <string name="title_team">Meu Time</string>
+    <string name="title_pokemon_details">Detalhes do Pokémon</string>
+
+    <!-- Mensagens dos diálogos -->
+    <string name="dialog_message_delete_item">Tem certeza de que deseja excluir este item?</string>
+    <string name="dialog_positive_button_yes">Sim</string>
+    <string name="dialog_negative_button_no">Não</string>
+
+    <!-- Mensagens de sucesso e erro -->
+    <string name="msg_removed_successfully">Item removido com sucesso!</string>
+    <string name="msg_no_books">Nenhum livro encontrado nos seus favoritos!</string>
+
+    <!-- Botões e descrições -->
+    <string name="button_remove_book">Remover livro</string>
+    <string name="desc_book_image">Imagem de livros</string>
+
+    <!-- Pokémon Strings -->
+    <string name="pokemon_sprite">Sprite do Pokémon</string>
+    <string name="add_to_team">Adicionar ao Time</string>
+    <string name="remove_from_team">Remover do Time</string>
+    <string name="show_shiny">Ver Versão Shiny</string>
+    <string name="show_normal">Ver Versão Normal</string>
+    <string name="types">Tipos</string>
+    <string name="physical_stats">Características Físicas</string>
+    <string name="height">Altura</string>
+    <string name="weight">Peso</string>
+    <string name="my_pokemon_team">Meu Time de Pokémon</string>
+    <string name="empty_team">Time Vazio</string>
+    <string name="empty_team_message">Você ainda não adicionou nenhum Pokémon ao seu time.\nExplore a PokéDex e monte seu time!</string>
+    <string name="no_pokemon_found">Nenhum Pokémon encontrado</string>
+    <string name="select_version">Selecione uma versão</string>
+    <string name="loading_pokemon">Carregando Pokémon…</string>
+
+</resources>
