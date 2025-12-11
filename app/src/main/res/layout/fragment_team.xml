@@ -10,29 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvTeamTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="@string/my_pokemon_team"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvTeamCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/tvTeamTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvTeamTitle"
-            tools:text="0/6" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewTeam"
             android:layout_width="0dp"
@@ -44,7 +21,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTeamTitle"
+            app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/item_team" />
 
         <LinearLayout

@@ -120,10 +120,6 @@ class TeamFragment : Fragment() {
                         Log.d("TeamFragment", "Submetendo ${teamsWithPokemons.size} times ao adapter")
                         adapter.submitList(teamsWithPokemons)
                         
-                        // Atualizar contador
-                        val totalPokemons = teamsWithPokemons.sumOf { it.second.size }
-                        binding.tvTeamCount?.text = "$totalPokemons Pokémon em ${teams.size} ${if (teams.size == 1) "time" else "times"}"
-                        
                     } catch (e: Exception) {
                         Log.e("TeamFragment", "ERRO ao carregar Pokémon dos times", e)
                     }
@@ -160,10 +156,6 @@ class TeamFragment : Fragment() {
     private fun showEmptyState(show: Boolean) {
         binding.layoutEmptyState?.visibility = if (show) View.VISIBLE else View.GONE
         binding.recyclerViewTeam.visibility = if (show) View.GONE else View.VISIBLE
-        
-        if (show) {
-            binding.tvTeamCount?.text = "0/6"
-        }
     }
     
     private fun navigateToPokemonDetails(pokemonId: Int) {
