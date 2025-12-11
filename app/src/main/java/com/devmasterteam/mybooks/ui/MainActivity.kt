@@ -1,10 +1,12 @@
 package com.devmasterteam.mybooks.ui
 
 import android.content.Context
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
+import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -26,7 +28,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Barra superior
+        // Barra superior com cor roxa
+        supportActionBar?.setBackgroundDrawable(
+            ColorDrawable(ContextCompat.getColor(this, R.color.background))
+        )
         supportActionBar?.show()
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
