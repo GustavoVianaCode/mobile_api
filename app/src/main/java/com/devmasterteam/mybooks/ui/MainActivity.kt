@@ -1,6 +1,9 @@
 package com.devmasterteam.mybooks.ui
 
+import android.content.Context
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Barra superior
-        supportActionBar?.hide()
+        supportActionBar?.show()
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -34,6 +37,37 @@ class MainActivity : AppCompatActivity() {
 
         // Configura bottom navigation
         setupNavigation()
+        
+        // Controla visibilidade da bottom navigation
+        setupNavigationVisibility()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_logout -> {
+                logout()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun logout() {
+        // Limpar sessão do usuário
+        val sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        with(sharedPref.edit()) {
+            clear()
+            apply()
+        }
+        
+        // Navegar para tela de login
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        navController.navigate(R.id.loginFragment)
     }
 
     /**
@@ -49,9 +83,28 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         val appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.navigation_pokedex, R.id.navigation_team)
+            setOf(R.id.navigation_pokedex, R.id.navigation_team, R.id.loginFragment)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+    
+    private fun setupNavigationVisibility() {
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.loginFragment, R.id.registerFragment -> {
+                    // Esconder bottom navigation e action bar nas telas de login/cadastro
+                    binding.navView.visibility = android.view.View.GONE
+                    supportActionBar?.hide()
+                }
+                else -> {
+                    // Mostrar bottom navigation e action bar nas outras telas
+                    binding.navView.visibility = android.view.View.VISIBLE
+                    supportActionBar?.show()
+                }
+            }
+        }
     }
 }

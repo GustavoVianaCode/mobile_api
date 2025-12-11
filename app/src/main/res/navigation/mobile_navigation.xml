@@ -3,7 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_pokedex">
+    app:startDestination="@+id/loginFragment">
+
+    <!-- Tela de Login (Tela Inicial) -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.devmasterteam.mybooks.ui.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_pokemonListFragment"
+            app:destination="@id/navigation_pokedex"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Tela de Cadastro -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.devmasterteam.mybooks.ui.RegisterFragment"
+        android:label="Cadastro"
+        tools:layout="@layout/fragment_register" />
 
     <fragment
         android:id="@+id/navigation_pokedex"

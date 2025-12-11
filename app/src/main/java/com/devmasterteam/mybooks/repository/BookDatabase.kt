@@ -8,7 +8,7 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.devmasterteam.mybooks.entity.BookEntity
 
-@Database(entities = [BookEntity::class], version = 1)
+@Database(entities = [BookEntity::class], version = 1, exportSchema = false)
 abstract class BookDatabase: RoomDatabase() {
     abstract fun bookDAO(): BookDAO
     companion object{
@@ -29,7 +29,7 @@ abstract class BookDatabase: RoomDatabase() {
         private object Migrations{
             val migrationFromV1toV2: Migration = object : Migration(1,2) {
                 override fun migrate(db: SupportSQLiteDatabase) {
-                    db.execSQL("DELETE FROOM Books")
+                    db.execSQL("DELETE FROM Books")
                 }
 
             }

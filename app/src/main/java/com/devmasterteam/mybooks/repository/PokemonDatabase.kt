@@ -8,15 +8,17 @@ import com.devmasterteam.mybooks.entity.PokemonEntity
 import com.devmasterteam.mybooks.entity.TeamEntity
 import com.devmasterteam.mybooks.entity.TeamMemberEntity
 import com.devmasterteam.mybooks.entity.TeamPokemonEntity
+import com.devmasterteam.mybooks.entity.UserEntity
 
 @Database(
     entities = [
         PokemonEntity::class, 
         TeamPokemonEntity::class,
         TeamEntity::class,
-        TeamMemberEntity::class
+        TeamMemberEntity::class,
+        UserEntity::class
     ],
-    version = 3,
+    version = 4,
     exportSchema = false
 )
 abstract class PokemonDatabase : RoomDatabase() {
@@ -24,6 +26,7 @@ abstract class PokemonDatabase : RoomDatabase() {
     abstract fun pokemonDAO(): PokemonDAO
     abstract fun teamPokemonDAO(): TeamPokemonDAO
     abstract fun teamDao(): TeamDao
+    abstract fun userDAO(): UserDAO
     
     companion object {
         @Volatile
