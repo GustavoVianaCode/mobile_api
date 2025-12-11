@@ -183,7 +183,20 @@ class PokemonListFragment : Fragment(), PokemonListener {
     }
 
     override fun onAddToTeamClick(pokemon: PokemonEntity) {
-        viewModel.addPokemonToTeam(pokemon)
+        showTeamSelectionDialog(pokemon)
+    }
+    
+    /**
+     * Mostra o dialog de seleção de time
+     */
+    private fun showTeamSelectionDialog(pokemon: PokemonEntity) {
+        val dialog = com.devmasterteam.mybooks.ui.dialog.TeamSelectionDialog(
+            pokemonId = pokemon.id
+        ) { teamId, teamName ->
+            val teamViewModel = ViewModelProvider(requireActivity())[com.devmasterteam.mybooks.viewmodel.TeamViewModel::class.java]
+            teamViewModel.addPokemonToTeam(teamId, pokemon.id, teamName)
+        }
+        dialog.show(parentFragmentManager, "TeamSelectionDialog")
     }
 
     override fun onDestroyView() {

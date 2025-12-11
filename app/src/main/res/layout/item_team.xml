@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="12dp"
-    app:cardBackgroundColor="@color/background_card">
+    android:layout_margin="12dp"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,38 +20,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:paddingBottom="12dp">
 
             <TextView
                 android:id="@+id/tvTeamName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="@color/text_primary"
-                tools:text="Time Principal" />
+                android:textColor="#2C3E50"
+                tools:text="Pokemon Scarlet" />
 
             <TextView
                 android:id="@+id/tvTeamSize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="@color/text_secondary"
-                android:background="@drawable/bg_chip"
+                android:textStyle="bold"
+                android:textColor="#7F8C8D"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="4dp"
                 android:layout_marginEnd="8dp"
-                tools:text="3/6" />
+                tools:text="6/6" />
 
             <ImageButton
                 android:id="@+id/btnDeleteTeam"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
                 android:src="@android:drawable/ic_menu_delete"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Deletar time"
-                app:tint="@color/danger" />
+                app:tint="#E74C3C" />
         </LinearLayout>
 
         <!-- RecyclerView horizontal com pokémons do time -->
@@ -59,20 +60,21 @@
             android:id="@+id/rvTeamPokemons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             android:orientation="horizontal"
+            android:clipToPadding="false"
+            android:paddingVertical="8dp"
             tools:listitem="@layout/item_team_pokemon"
-            tools:itemCount="3" />
+            tools:itemCount="6" />
 
         <TextView
             android:id="@+id/tvEmptyTeam"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="100dp"
             android:text="Time vazio\nAdicione Pokémon na PokéDex!"
-            android:textSize="14sp"
-            android:textColor="@color/text_secondary"
+            android:textSize="16sp"
+            android:textColor="#95A5A6"
             android:gravity="center"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:visibility="gone" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

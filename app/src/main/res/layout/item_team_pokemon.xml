@@ -5,18 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="4dp">
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="12dp">
+        android:padding="16dp"
+        android:background="#FFFFFF">
 
         <ImageView
             android:id="@+id/ivTeamPokemonSprite"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:contentDescription="@string/pokemon_sprite"
             android:scaleType="fitCenter"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,40 +32,39 @@
             android:id="@+id/tvTeamPokemonName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
+            android:textColor="#2C3E50"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:textAllCaps="true"
             app:layout_constraintEnd_toStartOf="@id/btnRemoveFromTeam"
             app:layout_constraintStart_toEndOf="@id/ivTeamPokemonSprite"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/tvTeamPokemonTypes"
-            tools:text="Charizard" />
+            app:layout_constraintTop_toTopOf="@id/ivTeamPokemonSprite"
+            tools:text="CHARIZARD" />
 
         <TextView
             android:id="@+id/tvTeamPokemonTypes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="13sp"
+            android:layout_marginTop="4dp"
+            android:textColor="#7F8C8D"
+            android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@id/btnRemoveFromTeam"
             app:layout_constraintStart_toEndOf="@id/ivTeamPokemonSprite"
             app:layout_constraintTop_toBottomOf="@id/tvTeamPokemonName"
-            app:layout_constraintBottom_toBottomOf="parent"
             tools:text="Fire • Flying" />
 
         <ImageButton
             android:id="@+id/btnRemoveFromTeam"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/remove_from_team"
             android:src="@android:drawable/ic_delete"
-            app:tint="@color/design_default_color_error"
+            app:tint="#E74C3C"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
