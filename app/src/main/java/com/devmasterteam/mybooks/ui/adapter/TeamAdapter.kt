@@ -58,7 +58,7 @@ class TeamAdapter(
 
         init {
             binding.rvTeamPokemons.apply {
-                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                layoutManager = androidx.recyclerview.widget.GridLayoutManager(context, 3)
                 adapter = pokemonAdapter
             }
         }

@@ -28,7 +28,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="#2C3E50"
                 tools:text="Pokemon Scarlet" />
@@ -47,22 +47,20 @@
 
             <ImageButton
                 android:id="@+id/btnDeleteTeam"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:src="@android:drawable/ic_menu_delete"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Deletar time"
                 app:tint="#E74C3C" />
         </LinearLayout>
 
-        <!-- RecyclerView horizontal com pokémons do time -->
+        <!-- Grid 3x2 com pokémons do time -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvTeamPokemons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:clipToPadding="false"
-            android:paddingVertical="8dp"
+            android:nestedScrollingEnabled="false"
             tools:listitem="@layout/item_team_pokemon"
             tools:itemCount="6" />
 

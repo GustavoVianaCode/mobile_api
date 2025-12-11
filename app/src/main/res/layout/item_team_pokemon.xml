@@ -4,71 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="6dp"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="#F8F9FA"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:background="#FFFFFF">
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:gravity="center">
 
+        <!-- Imagem do Pokémon -->
         <ImageView
             android:id="@+id/ivTeamPokemonSprite"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:contentDescription="@string/pokemon_sprite"
             android:scaleType="fitCenter"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             tools:src="@drawable/ic_launcher_foreground" />
 
+        <!-- Nome do Pokémon -->
         <TextView
             android:id="@+id/tvTeamPokemonName"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:textColor="#2C3E50"
-            android:textSize="18sp"
+            android:text="IVYSAUR"
+            android:textSize="10sp"
             android:textStyle="bold"
-            android:textAllCaps="true"
-            app:layout_constraintEnd_toStartOf="@id/btnRemoveFromTeam"
-            app:layout_constraintStart_toEndOf="@id/ivTeamPokemonSprite"
-            app:layout_constraintTop_toTopOf="@id/ivTeamPokemonSprite"
+            android:textColor="#2C3E50"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="4dp"
             tools:text="CHARIZARD" />
 
-        <TextView
-            android:id="@+id/tvTeamPokemonTypes"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="4dp"
-            android:textColor="#7F8C8D"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@id/btnRemoveFromTeam"
-            app:layout_constraintStart_toEndOf="@id/ivTeamPokemonSprite"
-            app:layout_constraintTop_toBottomOf="@id/tvTeamPokemonName"
-            tools:text="Fire • Flying" />
-
+        <!-- Botão Remover -->
         <ImageButton
             android:id="@+id/btnRemoveFromTeam"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_delete"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/remove_from_team"
-            android:src="@android:drawable/ic_delete"
             app:tint="#E74C3C"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="2dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

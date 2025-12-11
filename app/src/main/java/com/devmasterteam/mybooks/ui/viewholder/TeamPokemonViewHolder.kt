@@ -15,18 +15,11 @@ class TeamPokemonViewHolder(itemView: View, private val listener: TeamPokemonLis
 
     private val ivTeamPokemonSprite: ImageView = itemView.findViewById(R.id.ivTeamPokemonSprite)
     private val tvTeamPokemonName: TextView = itemView.findViewById(R.id.tvTeamPokemonName)
-    private val tvTeamPokemonTypes: TextView = itemView.findViewById(R.id.tvTeamPokemonTypes)
     private val btnRemoveFromTeam: ImageButton = itemView.findViewById(R.id.btnRemoveFromTeam)
 
     fun bind(teamPokemon: TeamPokemonEntity) {
-        // Nome capitalizado
-        tvTeamPokemonName.text = teamPokemon.pokemonName.replaceFirstChar { it.uppercase() }
-        
-        // Tipos formatados
-        val types = teamPokemon.types.split(",").joinToString(" • ") { 
-            it.trim().replaceFirstChar { char -> char.uppercase() }
-        }
-        tvTeamPokemonTypes.text = types
+        // Nome capitalizado e em maiúsculas
+        tvTeamPokemonName.text = teamPokemon.pokemonName.uppercase()
         
         // Carregar imagem com Coil
         ivTeamPokemonSprite.load(teamPokemon.spriteUrl) {
